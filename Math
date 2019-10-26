@@ -1,0 +1,452 @@
+{
+  "name": "math",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "IcAYR",
+  "actions": [
+    {
+      "comment": "Created by Jasper#0005",
+      "color": "#00ffff",
+      "name": "Comment"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "1",
+      "storage": "1",
+      "varName2": "AuthorID",
+      "name": "Store Member Info"
+    },
+    {
+      "storage": "1",
+      "varName": "Number1",
+      "min": "1",
+      "max": "500",
+      "name": "Generate Random Number"
+    },
+    {
+      "storage": "1",
+      "varName": "Number2",
+      "min": "1",
+      "max": "500",
+      "name": "Generate Random Number"
+    },
+    {
+      "storage": "1",
+      "varName": "List",
+      "name": "Create List"
+    },
+    {
+      "storage": "1",
+      "varName": "List",
+      "addType": "0",
+      "position": "",
+      "value": "'+'",
+      "name": "Add Item to List"
+    },
+    {
+      "storage": "1",
+      "varName": "List",
+      "addType": "0",
+      "position": "",
+      "value": "'-'",
+      "name": "Add Item to List"
+    },
+    {
+      "storage": "1",
+      "varName": "List",
+      "addType": "0",
+      "position": "",
+      "value": "'x'",
+      "name": "Add Item to List"
+    },
+    {
+      "storage": "1",
+      "varName": "List",
+      "addType": "0",
+      "position": "",
+      "value": "':'",
+      "name": "Add Item to List"
+    },
+    {
+      "list": "7",
+      "varName": "List",
+      "getType": "2",
+      "position": "",
+      "storage": "1",
+      "varName2": "Item",
+      "name": "Get Item from List"
+    },
+    {
+      "storage": "1",
+      "varName": "Item",
+      "comparison": "1",
+      "value": "\"+\"",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "2",
+      "name": "Check Variable"
+    },
+    {
+      "changeType": "0",
+      "value": "'${tempVars(\"Number1\")} + ${tempVars(\"Number2\")} ='",
+      "storage": "1",
+      "varName": "Sum",
+      "name": "Control Variable"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "tempVars(\"Number1\") + tempVars(\"Number2\")",
+      "storage": "1",
+      "varName": "SumAnswer",
+      "name": "Run Script"
+    },
+    {
+      "storage": "1",
+      "varName": "Item",
+      "comparison": "1",
+      "value": "\"-\"",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "2",
+      "name": "Check Variable"
+    },
+    {
+      "changeType": "0",
+      "value": "\"${tempVars(\"Number1\")} - ${tempVars(\"Number2\")} =\"",
+      "storage": "1",
+      "varName": "Sum",
+      "name": "Control Variable"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "tempVars(\"Number1\") - tempVars(\"Number2\")",
+      "storage": "1",
+      "varName": "SumAnswer",
+      "name": "Run Script"
+    },
+    {
+      "storage": "1",
+      "varName": "Item",
+      "comparison": "1",
+      "value": "\"x\"",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "4",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "Number1",
+      "min": "1",
+      "max": "15",
+      "name": "Generate Random Number"
+    },
+    {
+      "storage": "1",
+      "varName": "Number2",
+      "min": "1",
+      "max": "15",
+      "name": "Generate Random Number"
+    },
+    {
+      "changeType": "0",
+      "value": "\"${tempVars(\"Number1\")} x ${tempVars(\"Number2\")} =\"",
+      "storage": "1",
+      "varName": "Sum",
+      "name": "Control Variable"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "tempVars(\"Number1\") * tempVars(\"Number2\")",
+      "storage": "1",
+      "varName": "SumAnswer",
+      "name": "Run Script"
+    },
+    {
+      "storage": "1",
+      "varName": "Item",
+      "comparison": "1",
+      "value": "\":\"",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "4",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "Number1",
+      "min": "1",
+      "max": "15",
+      "name": "Generate Random Number"
+    },
+    {
+      "storage": "1",
+      "varName": "Number2",
+      "min": "1",
+      "max": "15",
+      "name": "Generate Random Number"
+    },
+    {
+      "changeType": "0",
+      "value": "\"${tempVars(\"Number1\")} : ${tempVars(\"Number2\")} =\"",
+      "storage": "1",
+      "varName": "Sum",
+      "name": "Control Variable"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "tempVars(\"Number1\") / tempVars(\"Number2\")",
+      "storage": "1",
+      "varName": "SumAnswer",
+      "name": "Run Script"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "Math.round(tempVars(\"SumAnswer\"))",
+      "storage": "1",
+      "varName": "RoundSumAnswer",
+      "name": "Run Script"
+    },
+    {
+      "title": "Math quiz",
+      "author": "",
+      "color": "#c111d9",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "debug": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "Embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "Embed",
+      "message": "Do you know the answer?\n\n**${tempVars(\"Sum\")} ...**",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "Embed",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "1",
+      "varName3": "EmbedSource",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "filter": "author.id === '${tempVars(\"AuthorID\")}'",
+      "max": "1",
+      "time": "30000",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "52",
+      "storage2": "0",
+      "varName2": "",
+      "name": "Await Response Call Action"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "6",
+      "storage": "1",
+      "varName2": "AuthorLastMessage",
+      "name": "Store Member Info"
+    },
+    {
+      "message": "1",
+      "varName": "AuthorLastMessage",
+      "info": "2",
+      "storage": "1",
+      "varName2": "AuthorLastMessageText",
+      "name": "Store Message Info"
+    },
+    {
+      "storage": "1",
+      "varName": "AuthorLastMessageText",
+      "comparison": "1",
+      "value": "tempVars(\"RoundSumAnswer\")",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "2",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "Exactly! That's how we smart people do it.",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "Nope, ${tempVars(\"AuthorLastMessageText\")} is not the correct answer. You have **2** attempts left.",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "filter": "author.id === '${tempVars(\"AuthorID\")}'",
+      "max": "1",
+      "time": "30000",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "52",
+      "storage2": "0",
+      "varName2": "",
+      "name": "Await Response Call Action"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "6",
+      "storage": "1",
+      "varName2": "AuthorLastMessage1",
+      "name": "Store Member Info"
+    },
+    {
+      "message": "1",
+      "varName": "AuthorLastMessage1",
+      "info": "2",
+      "storage": "1",
+      "varName2": "AuthorLastMessage1Text",
+      "name": "Store Message Info"
+    },
+    {
+      "storage": "1",
+      "varName": "AuthorLastMessage1Text",
+      "comparison": "1",
+      "value": "tempVars(\"RoundSumAnswer\")",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "2",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "Well done! You got the correct answer in 2 attempts.",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "Damnit, wrong again, you have **1** attempt left.",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "filter": "author.id === '${tempVars(\"AuthorID\")}'",
+      "max": "1",
+      "time": "30000",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "52",
+      "storage2": "0",
+      "varName2": "",
+      "name": "Await Response Call Action"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "6",
+      "storage": "1",
+      "varName2": "AuthorLastMessage2",
+      "name": "Store Member Info"
+    },
+    {
+      "message": "1",
+      "varName": "AuthorLastMessage2",
+      "info": "2",
+      "storage": "1",
+      "varName2": "AuthorLastMessage2Text",
+      "name": "Store Message Info"
+    },
+    {
+      "storage": "1",
+      "varName": "AuthorLastMessage2Text",
+      "comparison": "1",
+      "value": "tempVars(\"RoundSumAnswer\")",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "2",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "Mhm, you got it after 3 attempts.",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "Unfortunately, you didn't guess the answer. The answer was __${tempVars(\"RoundSumAnswer\")}__.",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    }
+  ]
+}
