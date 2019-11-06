@@ -1,0 +1,308 @@
+{
+  "name": "review",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "IAJNO",
+  "actions": [
+    {
+      "comment": "Created By Jasper#0005",
+      "color": "#00ffff",
+      "name": "Comment"
+    },
+    {
+      "message": "0",
+      "value": "43200",
+      "whattodo": "0",
+      "call": "28",
+      "storage": "1",
+      "varName": "TimeLeft",
+      "source": "IAJNO",
+      "name": "Set Time Restriction"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "ReviewChannel",
+      "comparison": "1",
+      "value": "'True'",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Server Data"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "You haven't set up the server review channel. Use `${server.tag}reviewchannel` to set up the review channel for this server.",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "condition": "0",
+      "comparison": "2",
+      "value": "0",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Parameters"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "Your argument should look like this:\n`${server.tag}review <number from 1-5> <optional reason>`",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "info": "0",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "Param1",
+      "name": "Store Command Params"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "2",
+      "storage": "1",
+      "varName2": "Name",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "12",
+      "storage": "1",
+      "varName2": "Avatar",
+      "name": "Store Member Info"
+    },
+    {
+      "condition": "0",
+      "comparison": "2",
+      "value": "1",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "2",
+      "name": "Check Parameters"
+    },
+    {
+      "info": "1",
+      "infoIndex": "2",
+      "storage": "1",
+      "varName": "Reason",
+      "name": "Store Command Params"
+    },
+    {
+      "count": "1",
+      "name": "Skip Actions"
+    },
+    {
+      "changeType": "0",
+      "value": "\"Not given\"",
+      "storage": "1",
+      "varName": "Reason",
+      "name": "Control Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "Param1",
+      "comparison": "14",
+      "value": "1",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "1",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "Param1",
+      "comparison": "13",
+      "value": "5",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "1",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "Your argument should look like this:\n`${server.tag}review <number from 1-5> <optional reason>`",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "const num = Math.round(tempVars(\"Param1\"))\nif (num == 1) {\nrate = \":star:\" }\nelse if(num == 2) {\nrate = \":star: :star:\" }\nelse if(num == 3 ) {\nrate = \":star: :star: :star:\" }\nelse if(num == 4) {\nrate = \":star: :star: :star: :star:\" }\nelse if(num == 5 ) {\nrate = \":star: :star: :star: :star: :star:\" }",
+      "storage": "1",
+      "varName": "Rate",
+      "name": "Run Script"
+    },
+    {
+      "info": "0",
+      "find": "${serverVars(\"ReviewChannelID\")}",
+      "storage": "1",
+      "varName": "Channel",
+      "name": "Find Channel"
+    },
+    {
+      "title": "",
+      "author": "${tempVars(\"Name\")}'s review",
+      "color": "",
+      "url": "",
+      "authorIcon": "${tempVars(\"Avatar\")}",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "debug": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "Embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "Embed",
+      "message": "${tempVars(\"Rate\")}",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "Embed",
+      "fieldName": "Feedback",
+      "message": "${tempVars(\"Reason\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "Embed",
+      "channel": "5",
+      "varName2": "Channel",
+      "storage3": "0",
+      "varName3": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "${member} Your review has been sent! <#${serverVars(\"ReviewChannelID\")}>",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "time": "${tempVars(\"TimeLeft\")}",
+      "storage": "1",
+      "varName": "TimeLeft",
+      "name": "Convert Seconds To D/H/M/S"
+    },
+    {
+      "storage": "1",
+      "varName": "TimeLeft",
+      "comparison": "5",
+      "value": "'0d'",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "1",
+      "name": "Check Variable"
+    },
+    {
+      "text": "${tempVars(\"TimeLeft\")}",
+      "text2": "0d",
+      "text3": "",
+      "info": "0",
+      "storage": "1",
+      "varName": "TimeLeft",
+      "name": "Replace Text"
+    },
+    {
+      "storage": "1",
+      "varName": "TimeLeft",
+      "comparison": "5",
+      "value": "'0h'",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "1",
+      "name": "Check Variable"
+    },
+    {
+      "text": "${tempVars(\"TimeLeft\")}",
+      "text2": "0h",
+      "text3": "",
+      "info": "0",
+      "storage": "1",
+      "varName": "TimeLeft",
+      "name": "Replace Text"
+    },
+    {
+      "storage": "1",
+      "varName": "TimeLeft",
+      "comparison": "5",
+      "value": "'0m'",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "1",
+      "name": "Check Variable"
+    },
+    {
+      "text": "${tempVars(\"TimeLeft\")}",
+      "text2": "0m",
+      "text3": "",
+      "info": "0",
+      "storage": "1",
+      "varName": "TimeLeft",
+      "name": "Replace Text"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "You can leave a review again in ${tempVars(\"TimeLeft\")}.",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    }
+  ]
+}
