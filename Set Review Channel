@@ -1,7 +1,7 @@
 {
   "name": "reviewchannel",
   "permissions": "NONE",
-  "restriction": "4",
+  "restriction": "1",
   "_id": "caSmL",
   "actions": [
     {
