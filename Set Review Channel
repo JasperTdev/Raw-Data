@@ -1,0 +1,164 @@
+{
+  "name": "reviewchannel",
+  "permissions": "NONE",
+  "restriction": "4",
+  "_id": "caSmL",
+  "actions": [
+    {
+      "comment": "Created By Jasper#0005",
+      "color": "#00ffff",
+      "name": "Comment"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "permission": "MANAGE_GUILD",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Member Permissions"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "You must have **Manage Guild** permissions to setup the server review channel.",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "info": "1",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "Msg",
+      "name": "Store Command Params"
+    },
+    {
+      "storage": "1",
+      "varName": "Msg",
+      "comparison": "6",
+      "value": "^(disable|default)$",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "3",
+      "name": "Check Variable"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "ReviewChannel",
+      "changeType": "0",
+      "value": "'False'",
+      "name": "Control Server Data"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "The review settings has been disabled: no more reviews can be sent.",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "ReviewChannel",
+      "comparison": "1",
+      "value": "'True'",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "3",
+      "name": "Check Server Data"
+    },
+    {
+      "condition": "0",
+      "comparison": "0",
+      "value": "0",
+      "iftrue": "0",
+      "iftrueVal": "2",
+      "iffalse": "3",
+      "iffalseVal": "2",
+      "name": "Check Parameters"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "The current review channel is <#${serverVars(\"ReviewChannelID\")}>",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "condition": "2",
+      "comparison": "0",
+      "value": "1",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Parameters"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "You must mention a channel.",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "channel": "1",
+      "varName": "",
+      "info": "1",
+      "storage": "2",
+      "varName2": "ReviewChannelID",
+      "name": "Store Channel Info"
+    },
+    {
+      "storage": "2",
+      "varName": "ReviewChannelID",
+      "name": "Save Variable"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "ReviewChannel",
+      "changeType": "0",
+      "value": "'True'",
+      "name": "Control Server Data"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "Reviews will be sent to <#${serverVars(\"ReviewChannelID\")}>!",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    }
+  ]
+}
