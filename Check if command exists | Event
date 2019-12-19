@@ -1,0 +1,80 @@
+{
+  "name": "Check if command exists",
+  "temp": "Message",
+  "event-type": "2",
+  "_id": "BTKuN",
+  "actions": [
+    {
+      "server": "0",
+      "varName": "",
+      "info": "1",
+      "storage": "1",
+      "varName2": "ID",
+      "name": "Store Server Info"
+    },
+    {
+      "storage": "1",
+      "varName": "ID",
+      "comparison": "1",
+      "value": "'626159042896723968'",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "message": "1",
+      "varName": "Message",
+      "info": "2",
+      "storage": "1",
+      "varName2": "Text",
+      "name": "Store Message Info"
+    },
+    {
+      "message": "1",
+      "varName": "Message",
+      "info": "4",
+      "storage": "1",
+      "varName2": "Channel",
+      "name": "Store Message Info"
+    },
+    {
+      "behavior": "1",
+      "interpretation": "1",
+      "code": "const str = tempVars(\"Text\")\nconst tag = server.tag\nif (str.startsWith(tag)) {\nconst result = str.replace(tag, '')\nthis.storeValue(result, 1, \"Text\", cache)\nthis.callNextAction(cache);\n} else {\nconst abc = 'stop' }",
+      "storage": "0",
+      "varName": "Text",
+      "name": "Run Script"
+    },
+    {
+      "searchCommandBy": "0",
+      "valueToSearch": "${tempVars(\"Text\")}",
+      "info": "0",
+      "storage": "1",
+      "varName": "Command",
+      "name": "Store Command Info"
+    },
+    {
+      "storage": "1",
+      "varName": "Command",
+      "comparison": "1",
+      "value": "'invalid'",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "5",
+      "varName": "Channel",
+      "message": "`${server.tag}${tempVars(\"Text\")}` is not a command.",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    }
+  ]
+}
